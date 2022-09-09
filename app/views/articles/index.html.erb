@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  </head>
+
+  <body>
+    <h1>Hello there</h1>
+    <h3>Articles</h3>
+    <ul>
+        <% @articles.each do |article| %>
+         <li>
+            <%= article.title %>
+         </li>
+        <% end %>
+    </ul>
+  </body>
+</html>
+
