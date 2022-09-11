@@ -5,13 +5,11 @@
   </head>
 
   <body>
-  <h1>New Article</h1>
-  <%= render "form", article: @article %>
-  <%= form_with model: @article do |form| %>
+ <%= form_with model: article do |form| %>
   <div>
     <%= form.label :title %><br>
     <%= form.text_field :title %>
-    <% @article.errors.full_messages_for(:title).each do |message| %>
+    <% article.errors.full_messages_for(:title).each do |message| %>
       <div><%= message %></div>
     <% end %>
   </div>
@@ -19,14 +17,15 @@
   <div>
     <%= form.label :body %><br>
     <%= form.text_area :body %><br>
-    <% @article.errors.full_messages_for(:body).each do |message| %>
+    <% article.errors.full_messages_for(:body).each do |message| %>
       <div><%= message %></div>
     <% end %>
   </div>
+
   <div>
     <%= form.label :tags %><br>
     <%= form.text_area :tags %><br>
-    <% @article.errors.full_messages_for(:tags).each do |message| %>
+    <% article.errors.full_messages_for(:tags).each do |message| %>
       <div><%= message %></div>
     <% end %>
   </div>
@@ -35,5 +34,6 @@
     <%= form.submit %>
   </div>
 <% end %>
+
   </body>
 </html>
