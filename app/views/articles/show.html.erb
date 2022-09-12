@@ -20,7 +20,21 @@
                     turbo_method: :delete,
                     turbo_confirm: "Are you sure?"
   } %></li>
-</ul>
-    </ul>
+  <h2>Add Comments</h2>
+  <%= render @article.comments %>
+    <h2>Comments</h2>
+   <%= form_with model: [ @article, @article.comments.build ] do |form| %>
+  <p>
+    <%= form.label :user %><br>
+    <%= form.text_field :user %>
+  </p>
+  <p>
+    <%= form.label :comment %><br>
+    <%= form.text_area :comment %>
+  </p>
+  <p>
+    <%= form.submit %>
+  </p>
+<% end %>
   </body>
 </html>
